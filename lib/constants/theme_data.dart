@@ -20,8 +20,7 @@ class Styles {
           ),
       cardColor: isDarkTheme ? darkCardColor : lightCardColor,
       colorScheme: ThemeData().colorScheme.copyWith(
-            secondary: isDarkTheme ? darkIconsColor : lightIconsColor,
-            brightness: isDarkTheme ? Brightness.dark : Brightness.light,
+            onSecondary: isDarkTheme ? darkCardColor : lightCardColor,
             primary: isDarkTheme ? darkCardColor : lightCardColor,
             background:
                 isDarkTheme ? darkBackgroundColor : lightBackgroundColor,
