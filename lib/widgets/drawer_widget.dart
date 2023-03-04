@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/constants/spacing.dart';
 import 'package:provider/provider.dart';
 
@@ -37,7 +38,13 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                     ),
                   ),
                   20.ph,
-                  const Text('News App'),
+                  Text(
+                    'News App',
+                    style: GoogleFonts.lobster(
+                      fontSize: 20,
+                      letterSpacing: 0.6,
+                    ),
+                  ),
                 ],
               ),
             ),
