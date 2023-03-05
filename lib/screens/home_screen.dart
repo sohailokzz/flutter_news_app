@@ -17,6 +17,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   var newsType = NewsType.allNews;
   int currentPageIndex = 0;
+  String sortBy = SortByEnum.publishedAt.name;
   @override
   Widget build(BuildContext context) {
     final Color color = Utilis(context).getColor;
@@ -143,10 +144,53 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   ),
+            10.ph,
+            newsType == NewsType.topTrending
+                ? Container()
+                : Align(
+                    alignment: Alignment.topRight,
+                    child: Container(
+                      color: Theme.of(context).cardColor,
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: DropdownButton(
+                        value: sortBy,
+                        items: dropDownItems,
+                        onChanged: (String? value) {
+                          setState(() {
+                            sortBy = value!;
+                          });
+                        },
+                      ),
+                    ),
+                  ),
           ],
         ),
       ),
     );
+  }
+
+  List<DropdownMenuItem<String>> get dropDownItems {
+    List<DropdownMenuItem<String>> menuItems = [
+      DropdownMenuItem(
+        value: SortByEnum.relevancy.name,
+        child: Text(
+          SortByEnum.relevancy.name,
+        ),
+      ),
+      DropdownMenuItem(
+        value: SortByEnum.publishedAt.name,
+        child: Text(
+          SortByEnum.publishedAt.name,
+        ),
+      ),
+      DropdownMenuItem(
+        value: SortByEnum.popularity.name,
+        child: Text(
+          SortByEnum.popularity.name,
+        ),
+      ),
+    ];
+    return menuItems;
   }
 
   Widget paginationButton({
