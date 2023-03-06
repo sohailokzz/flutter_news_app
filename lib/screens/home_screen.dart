@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/constants/spacing.dart';
+import 'package:news_app/widgets/articel_widget.dart';
 import '../constants/vars.dart';
 import '../services/utilis.dart';
 import '../widgets/drawer_widget.dart';
@@ -163,6 +164,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
+            10.ph,
+            Expanded(
+              child: ListView.builder(
+                padding: const EdgeInsets.all(8.0),
+                itemCount: 20,
+                itemBuilder: (context, index) {
+                  return const ArticleWidget();
+                },
+              ),
+            )
           ],
         ),
       ),

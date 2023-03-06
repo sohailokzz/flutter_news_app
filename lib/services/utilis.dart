@@ -7,6 +7,8 @@ class Utilis {
 
   Utilis(this.context);
 
+  Size get getScreen => MediaQuery.of(context).size;
+
   bool get getTheme => Provider.of<ThemeProvider>(context).getDarkTheme;
 
   Color get getColor => getTheme ? Colors.white : Colors.black;
