@@ -18,6 +18,7 @@ dependencies:
   flutter_iconly: ^1.0.2
   google_fonts: ^4.0.3
   fancy_shimmer_image: ^2.0.2
+  shimmer: ^2.0.0
 
 dev_dependencies:
   flutter_test:
