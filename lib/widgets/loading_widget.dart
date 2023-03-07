@@ -28,6 +28,8 @@ class _LoadingWidgetState extends State<LoadingWidget> {
     Size size = Utilis(context).getScreen;
     return Expanded(
       child: ListView.builder(
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
         padding: const EdgeInsets.all(8.0),
         itemCount: 20,
         itemBuilder: (context, index) {

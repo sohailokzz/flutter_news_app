@@ -1,8 +1,10 @@
+import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/constants/spacing.dart';
-import 'package:news_app/widgets/loading_widget.dart';
+import 'package:news_app/widgets/articel_widget.dart';
+import 'package:news_app/widgets/top_trending_widget.dart';
 import '../constants/vars.dart';
 import '../services/utilis.dart';
 import '../widgets/drawer_widget.dart';
@@ -21,6 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
   String sortBy = SortByEnum.publishedAt.name;
   @override
   Widget build(BuildContext context) {
+    final size = Utilis(context).getScreen;
     final Color color = Utilis(context).getColor;
     return SafeArea(
       child: Scaffold(
@@ -164,8 +167,28 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
-            10.ph,
-            const LoadingWidget(),
+            if (newsType == NewsType.allNews)
+              Expanded(
+                child: ListView.builder(
+                  itemCount: 20,
+                  itemBuilder: (context, index) {
+                    return const ArticleWidget();
+                  },
+                ),
+              ),
+            if (newsType == NewsType.topTrending)
+              SizedBox(
+                height: size.height * 0.6,
+                child: Swiper(
+                  layout: SwiperLayout.STACK,
+                  viewportFraction: 0.9,
+                  itemWidth: size.width * 0.9,
+                  itemCount: 5,
+                  itemBuilder: (context, index) {
+                    return const TopTrendingWidget();
+                  },
+                ),
+              ),
           ],
         ),
       ),
