@@ -24,7 +24,7 @@ class DrawerListTile extends StatelessWidget {
         ),
       ),
       onTap: () {
-        onTap;
+        onTap();
       },
     );
   }

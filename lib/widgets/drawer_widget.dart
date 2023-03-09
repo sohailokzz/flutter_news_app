@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/constants/spacing.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
+import '../inner_screens/bookmark_screen.dart';
 import '../providers/theme_provider.dart';
 import 'drawer_list_tile.dart';
 
@@ -57,7 +59,17 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             DrawerListTile(
               icon: IconlyBold.bookmark,
               label: 'Bookmark',
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  PageTransition(
+                    child: const BookMarkScreen(),
+                    type: PageTransitionType.rightToLeft,
+                    ctx: context,
+                    inheritTheme: true,
+                  ),
+                );
+              },
             ),
             const Divider(
               thickness: 3,
