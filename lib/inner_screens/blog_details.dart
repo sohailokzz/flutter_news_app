@@ -1,4 +1,6 @@
+import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/constants/spacing.dart';
 import 'package:news_app/constants/vars.dart';
@@ -60,6 +62,51 @@ class _NewsDetailsScreenState extends State<NewsDetailsScreen> {
               25.ph,
             ],
           ),
+          Stack(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(
+                  bottom: 25,
+                ),
+                child: FancyShimmerImage(
+                  width: double.infinity,
+                  boxFit: BoxFit.fill,
+                  errorWidget: Image.asset('assets/images/empty_image.png'),
+                  imageUrl:
+                      'https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=1024x1024&w=is&k=20&c=MB1-O5fjps0hVPd97fMIiEaisPMEn4XqVvQoJFKLRrQ=',
+                ),
+              ),
+              Positioned(
+                bottom: 0,
+                right: 18,
+                child: Row(
+                  children: [
+                    Card(
+                      shape: const CircleBorder(),
+                      elevation: 10,
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          IconlyLight.send,
+                        ),
+                      ),
+                    ),
+                    Card(
+                      shape: const CircleBorder(),
+                      elevation: 10,
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          IconlyLight.bookmark,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          20.ph,
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

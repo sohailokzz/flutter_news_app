@@ -52,6 +52,7 @@ class ArticleWidget extends StatelessWidget {
                       height: size.height * 0.12,
                       width: size.height * 0.12,
                       boxFit: BoxFit.fill,
+                      errorWidget: Image.asset('assets/images/empty_image.png'),
                       imageUrl:
                           'https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=1024x1024&w=is&k=20&c=MB1-O5fjps0hVPd97fMIiEaisPMEn4XqVvQoJFKLRrQ=',
                     ),
