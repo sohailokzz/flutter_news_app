@@ -16,6 +16,11 @@ TextStyle smallTextStyle = GoogleFonts.montserrat(
   fontSize: 15,
 );
 
+TextStyle titleTextStyle = GoogleFonts.montserrat(
+  fontSize: 20,
+  fontWeight: FontWeight.bold,
+);
+
 const List<String> searchKeyWord = [
   'Football',
   'Python',

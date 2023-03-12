@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/inner_screens/blog_details.dart';
 import 'package:provider/provider.dart';
 
 import 'constants/theme_data.dart';
@@ -57,13 +58,16 @@ class _MyAppState extends State<MyApp> {
         ) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            title: 'Blog',
+            title: 'News App',
             theme: Styles.themeData(
               themeChangeProvider.getDarkTheme,
               context,
             ),
             home: const HomeScreen(),
-            routes: const {},
+            routes: {
+              NewsDetailsScreen.routeName: (context) =>
+                  const NewsDetailsScreen(),
+            },
           );
         },
       ),

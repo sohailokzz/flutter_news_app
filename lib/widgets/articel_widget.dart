@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:news_app/constants/spacing.dart';
 import 'package:news_app/constants/vars.dart';
+import 'package:news_app/inner_screens/blog_details.dart';
 import 'package:news_app/inner_screens/news_details_webview.dart';
 import 'package:page_transition/page_transition.dart';
 
@@ -17,7 +18,12 @@ class ArticleWidget extends StatelessWidget {
       margin: const EdgeInsets.all(8.0),
       color: Theme.of(context).cardColor,
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.pushNamed(
+            context,
+            NewsDetailsScreen.routeName,
+          );
+        },
         child: Stack(
           children: [
             Container(
