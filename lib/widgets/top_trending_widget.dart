@@ -1,7 +1,11 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:news_app/inner_screens/blog_details.dart';
 import 'package:news_app/services/utilis.dart';
+import 'package:page_transition/page_transition.dart';
+
+import '../inner_screens/news_details_webview.dart';
 
 class TopTrendingWidget extends StatelessWidget {
   const TopTrendingWidget({super.key});
@@ -9,14 +13,18 @@ class TopTrendingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = Utilis(context).getScreen;
-    final color = Utilis(context).getColor;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Material(
         color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(12.0),
         child: InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(
+              context,
+              NewsDetailsScreen.routeName,
+            );
+          },
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -44,7 +52,17 @@ class TopTrendingWidget extends StatelessWidget {
               Row(
                 children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        PageTransition(
+                          child: const NewsDetailsWebview(),
+                          type: PageTransitionType.rightToLeft,
+                          ctx: context,
+                          inheritTheme: true,
+                        ),
+                      );
+                    },
                     icon: const Icon(
                       Icons.link,
                     ),

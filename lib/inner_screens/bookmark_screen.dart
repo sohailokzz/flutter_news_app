@@ -14,7 +14,6 @@ class BookMarkScreen extends StatefulWidget {
 class _BookMarkScreenState extends State<BookMarkScreen> {
   @override
   Widget build(BuildContext context) {
-    final size = Utilis(context).getScreen;
     final Color color = Utilis(context).getColor;
     return Scaffold(
       appBar: AppBar(

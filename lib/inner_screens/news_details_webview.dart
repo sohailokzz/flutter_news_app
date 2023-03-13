@@ -18,7 +18,6 @@ class _NewsDetailsWebviewState extends State<NewsDetailsWebview> {
 
   @override
   Widget build(BuildContext context) {
-    final size = Utilis(context).getScreen;
     final color = Utilis(context).getColor;
     return WillPopScope(
       onWillPop: () async {
